@@ -1,0 +1,1 @@
+Download the browser build of qrcode-generator (MIT) from https://www.npmjs.com/package/qrcode-generator and save it here as qrcode-generator.js. The application loads this local file; it does not use a runtime CDN.
