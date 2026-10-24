@@ -23,4 +23,10 @@
 <section class="panel"><div class="heading"><b>04</b><div><h2>Upload images</h2><p>Center logo and custom shape reference.</p></div></div><div class="uploads"><label>＋<strong>Center logo</strong><small>PNG / JPG / WebP</small><input id="logo" type="file" accept="image/png,image/jpeg,image/webp"></label><label>◇<strong>Custom silhouette</strong><small>Transparent PNG works best</small><input id="custom" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml"></label></div><p id="uploadNote" class="hint">Images stay on your device; no upload server is used.</p><button id="remove" class="linkbtn">Remove uploaded images</button></section>
 <button id="generate" class="generate">Generate QR design <span>↗</span></button></aside>
 <section class="preview"><div class="preview-head"><div><small>LIVE CANVAS</small><h2>Your creation</h2></div><span class="live"><i></i> LIVE PREVIEW</span></div><div class="canvas"><div class="orbit o1"></div><div class="orbit o2"></div><div id="qr" class="qr"><div class="empty"><b>⌘</b><strong>Your QR canvas</strong><span>Enter a URL to preview your design</span></div></div><div class="caption"><span id="shapeLabel">HOUSE SILHOUETTE</span><span>● CUSTOM QR</span></div></div><div class="export"><div><small>EXPORT FORMAT</small><strong>High-resolution image</strong></div><div><button id="png" disabled>↓ PNG</button><button id="svg" disabled>↓ SVG</button></div></div><div class="scan"><b>⌁</b><div><strong>Designed to scan</strong><p>Keep strong contrast and test the downloaded QR with a phone camera before sharing.</p></div></div><p class="privacy">◈ Private by design — generation happens in your browser.</p></section></div></main><footer><b>FORMAQR</b><span>MADE FOR YOUR NEXT IDEA</span></footer>
-<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script><script src="app.js"></script></body></html>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script><script src="app.js">
+<script type="text/javascript" src="qrcode.js"></script><div id="placeHolder"></div>var typeNumber = 4;
+var errorCorrectionLevel = 'L';
+var qr = qrcode(typeNumber, errorCorrectionLevel);
+qr.addData('Hi!');
+qr.make();
+document.getElementById('placeHolder').innerHTML = qr.createImgTag();</script></body></html>
