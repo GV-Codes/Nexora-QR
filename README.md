@@ -3,14 +3,20 @@
 Static HTML/CSS/JavaScript QR design studio for GitHub + Vercel.
 
 ## Features
-- 19 silhouettes across five categories: General, Flowers, Basic Shapes, Symbols & Nature, and Vehicles
-- Short text accepts up to 5 alphanumeric characters (A–Z, 0–9); complete HTTP/HTTPS URLs can be longer; live preview updates as you type and over-limit text is flagged
-- Square, rounded, and dot modules
+- 25 original silhouette options across six categories: General, Flowers, Basic Shapes, Symbols & Nature, Vehicles, and Cartoon
+- Cartoon-inspired silhouette concepts: Cat & Mouse, Cheerful Mouse, Playful Duck, Chipmunk Duo, Flying Elephant, and Lion Cub; these are generic original shapes, not official character artwork
+- Short text accepts up to 5 alphanumeric characters (A–Z, 0–9); complete HTTP/HTTPS URLs can be longer
+- Live preview and clear validation feedback while entering text
+- Square, rounded, and dot QR modules
+- Foreground/background color controls and preset palettes
 - Center logo upload and custom silhouette image upload
 - PNG and SVG downloads
 - Responsive dark creative-studio interface
 - No backend, login, database, or paid AI API required
 - Images are read in the browser and not uploaded to a server
+
+## Cartoon artwork and licensing
+The Cartoon category uses simple, original cartoon-inspired geometric silhouettes drawn in code. It does not include official Tom and Jerry, Mickey Mouse, Donald Duck, Chip and Dale, Dumbo, or Simba artwork and is not affiliated with their rights holders. If you add Creative Commons artwork later, verify the license on the original source, keep the creator/license attribution where required, and check whether commercial use and adaptations are allowed. Avoid using a character's name or branding in a way that implies endorsement.
 
 ## QR library
 The app loads the open-source `qrcode-generator` browser build from jsDelivr (MIT license). There is no paid API or backend. A network connection is required for the QR library to load. For fully offline use, download the library and serve it locally instead.
@@ -25,17 +31,13 @@ Run `python3 -m http.server 5500` from this folder, then open http://localhost:5
 4. Import the GitHub repository.
 5. Framework preset: Other.
 6. Build command: leave empty. Output directory: `.` (project root).
-7. Deploy and test URL entry, all shapes, logo upload, colors, PNG/SVG export, and phone scanning.
+7. Deploy and test text entry, URLs, categories, logo upload, colors, PNG/SVG export, and phone scanning.
 
 ## Scan reliability
-Scan-safe mode preserves the complete QR matrix and draws the chosen silhouette as a decorative outline. Artistic mode masks modules to a silhouette and can break decoding. Keep high contrast, preserve the quiet zone, keep center logos small, and scan-test all downloads before publishing.
+Scan-safe mode is enabled by default and preserves the complete QR data grid while drawing the chosen silhouette as a decorative outline. Artistic mode masks modules to a silhouette and can break decoding. Keep strong foreground/background contrast, preserve the quiet zone, keep center logos small, and scan-test every exported file with multiple phone cameras before publishing. Visual styling alone cannot guarantee scan reliability across all devices and print sizes.
 
 ## Current custom-image behavior
 Center logo uploads are embedded in exported SVG/PNG. Custom silhouette uploads are accepted and kept local; in this starter version the selected built-in silhouette still controls the mask. Full alpha-aware arbitrary-image masking would require an additional mask-processing implementation.
 
 ## Portfolio summary
-FormaQR is a responsive browser-based QR design studio with shape selection, color customization, image upload, QR module styling, and PNG/SVG export, designed for static deployment on GitHub Pages or Vercel.
-
-
-### Shape categories
-The shape picker is grouped into General (house, tree, coffee mug), Flowers (rose, tulip), Basic shapes (circle, rectangle, diamond, heart, square, star, hexagon), Symbols & nature (spade, clover, butterfly, cloud), and Vehicles (car, rocket, bicycle). Select a category tab to filter the shape tiles.
+FormaQR is a responsive, browser-based QR design studio with short alphanumeric text and full URL support, six silhouette categories including original cartoon-inspired designs, color and module customization, local image upload, live preview, and PNG/SVG export. It is designed for static deployment on GitHub Pages or Vercel.
